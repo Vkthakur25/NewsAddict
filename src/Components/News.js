@@ -11,7 +11,7 @@ class News extends Component {
         }
     }
     async componentDidMount() {
-         let NewsUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=20de4becadea485e94177be564df59d3"
+         let NewsUrl = "https://gnews.io/api/v4/search?q=example&apikey=cd6188e38324f41baa8d93723f98d1d4"
          this.setState({loading : true});
          let data = await fetch(NewsUrl);
          console.log(NewsUrl)
@@ -58,7 +58,7 @@ class News extends Component {
                 <div className="d-flex flex-wrap my-2" >
                     {this.state.articles.map((element) => {
                         return <div key={element.url}>
-                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} articleUrl={element.url} />
+                            <NewsItem title={element.title} description={element.description} imageUrl={element.image} articleUrl={element.url} />
                         </div>
                     }
                     )}
