@@ -1,20 +1,34 @@
 import React, { Component } from 'react';
 import NewsItem from './NewsItem';
+import PropTypes from 'prop-types'
 class News extends Component {
+  static defaultprops = {
+    category:"general"
+  }
+  static PropTypes = {
+    category: PropTypes.string
+  }
   constructor(props) {
     super(props);
     this.state = {
       articles: [],
       loading: false,
-      page: 1,
+      page: 1
     };
   }
   async updateNews() {
-    // let NewsUrl = "https://gnews.io/api/v4/search?q=example&apikey=cd6188e38324f41baa8d93723f98d1d4"
+    // let NewsUrl = "https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&max=10&apikey=cd6188e38324f41baa8d93723f98d1d4"
+    let a = ()=>{
+      return($`{this.props.category}`)}
+    console.log(a);
     this.setState({ loading: true });
     let data = await fetch(NewsUrl);
     let parsedData = await data.json();
-    this.setState({ articles: parsedData.articles, totalResults: parsedData.totalResults, loading: false });
+    this.setState({
+      articles: parsedData.articles,
+      totalResults: parsedData.totalResults,
+      loading: false,
+    });
   }
   async componentDidMount() {
     this.updateNews();

@@ -23,46 +23,42 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link
-                    className="nav-Link text-white"
-                    aria-current="page"
-                    to="/"
-                  >
+                  <Link className="nav-link text-white" to="/General">
                     General
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/World">
                     World
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Bussiness">
                     Bussiness
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Technology">
                     Technology
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Entertainment">
                     Entertainment
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Sports">
                     Sports
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Science">
                     Science
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-Link text-white" to="/">
+                  <Link className="nav-link text-white" to="/Health">
                     Health
                   </Link>
                 </li>
