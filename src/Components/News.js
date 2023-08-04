@@ -5,7 +5,7 @@ class News extends Component {
   static defaultprops = {
     category:"general"
   }
-  static PropTypes = {
+  static propTypes = {
     category: PropTypes.string
   }
   constructor(props) {
@@ -16,11 +16,9 @@ class News extends Component {
       page: 1
     };
   }
+  
   async updateNews() {
-    // let NewsUrl = "https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&max=10&apikey=cd6188e38324f41baa8d93723f98d1d4"
-    let a = ()=>{
-      return($`{this.props.category}`)}
-    console.log(a);
+    // let NewsUrl = `https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&apikey=cd6188e38324f41baa8d93723f98d1d4`
     this.setState({ loading: true });
     let data = await fetch(NewsUrl);
     let parsedData = await data.json();

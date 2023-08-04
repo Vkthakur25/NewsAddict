@@ -6,7 +6,7 @@ class Navbar extends Component {
       <div>
         <nav className="navbar navbar-expand-lg bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand text-white" to="/">
+            <Link className="navbar-brand text-white" to="/General">
               NewsAddicts
             </Link>
             <button
