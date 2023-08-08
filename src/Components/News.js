@@ -8,6 +8,9 @@ class News extends Component {
   static propTypes = {
     category: PropTypes.string
   }
+  CapitalizeFirstLetter = (string)=>{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +18,7 @@ class News extends Component {
       loading: false,
       page: 1
     };
+    document.title = `${this.CapitalizeFirstLetter(this.props.category)} - NewsAddicts`
   }
   
   async updateNews() {
@@ -56,7 +60,7 @@ class News extends Component {
         } */
     return (
       <div className="m-5">
-        <h2>NewsAddicts - Top Headlines</h2>
+        <h2>NewsAddicts - Top {this.CapitalizeFirstLetter(this.props.category)} Headlines</h2>
         <div className="d-flex flex-wrap my-2">
           {this.state.articles.map((element) => {
             return (
