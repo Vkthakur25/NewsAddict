@@ -15,7 +15,6 @@ class News extends Component {
     super(props);
     this.state = {
       articles: [],
-      loading: false,
       page: 1
     };
     document.title = `${this.CapitalizeFirstLetter(this.props.category)} - NewsAddicts`
@@ -23,13 +22,12 @@ class News extends Component {
   
   async updateNews() {
     // let NewsUrl = `https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&apikey=cd6188e38324f41baa8d93723f98d1d4`
-    this.setState({ loading: true });
     let data = await fetch(NewsUrl);
     let parsedData = await data.json();
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
-      loading: false,
+
     });
   }
   async componentDidMount() {
@@ -41,7 +39,7 @@ class News extends Component {
             this.updateNews();
             this.setState({
                 page: this.state.page - 1,
-                articles: parsedData.articles, loading : false
+                articles: parsedData.articles, 
             }) 
                 
         } */
@@ -53,7 +51,7 @@ class News extends Component {
                 this.setState({
                     page: this.state.page + 1,
                     articles: parsedData.articles,
-                    loading : false
+                    
                 })
            
         }
