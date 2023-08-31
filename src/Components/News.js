@@ -21,7 +21,7 @@ class News extends Component {
   }
   
   async updateNews() {
-    // let NewsUrl = `https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&apikey=cd6188e38324f41baa8d93723f98d1d4`
+    let NewsUrl = `https://gnews.io/api/v4/top-headlines?category=${this.props.category}&lang=en&country=in&apikey=cd6188e38324f41baa8d93723f98d1d4`
     let data = await fetch(NewsUrl);
     let parsedData = await data.json();
     this.setState({
